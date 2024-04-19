@@ -4,4 +4,5 @@ project(dynamicznaAlokacja)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(dynamicznaAlokacja main.cpp
-        array.cpp)
+        array.cpp
+        array.h)
