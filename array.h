@@ -2,8 +2,9 @@
 #ifndef UNTITLED1XD_ARRAY_H
 #define UNTITLED1XD_ARRAY_H
 
-#define  SIZE 10
+int *SIZE;
 
+float Average(int *array);
 
 void displayArray(int array[]);
 

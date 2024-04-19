@@ -1,5 +1,10 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include "array.h"
+
+FILE *ftpr;
+int array[5];
 
 void menu(void){
 
@@ -13,8 +18,9 @@ void menu(void){
 }
 
 int main() {
-    int array[SIZE] = {1, 2, 3, -4, 50, 6, 7, 8, 9, 10};
-    printf("Simple array...\n");
+
+    SIZE = (int *) malloc(5 *sizeof(int));
+    ftpr=fopen("array.txt", "w");
 
     int option = 0;
     int max = findMaximumValue(array);
@@ -51,5 +57,6 @@ int main() {
     {
         printf("koniec : )\n");
     }
+    free(array_memory);
     return 0;
 }
