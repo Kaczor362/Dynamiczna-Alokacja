@@ -11,7 +11,6 @@ void menu(void){
     printf("0.Exit\n");
     printf("Select an option:\n");
 }
-
 int main() {
     int array[SIZE] = {1, 2, 3, -4, 50, 6, 7, 8, 9, 10};
     printf("Simple array...\n");
