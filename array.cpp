@@ -3,10 +3,11 @@
 //
 #include <iostream>
 #include "array.h"
+using namespace std;
 
 void displayArray(int array[]){
     for (int i = 0; i < SIZE; ++i) {
-        printf("array [%d] = %d\n", i, array[i]);
+        cout<<("array [%d] = %d\n", i, array[i]);
     }
 }
 int findMaximumValue(int array[]){
@@ -41,7 +42,7 @@ int findSumValue(int array[])
 void wpisywanie(int array[])
 {
     for (int i = 0; i < SIZE; ++i) {
-        printf("array[%d]=", i);
+        cout<<("array[%d]=", i);
         scanf("%d", &array[i]);
     }
 }

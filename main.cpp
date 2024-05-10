@@ -1,20 +1,27 @@
 #include <iostream>
 #include "array.h"
+#include <iostream>
+#include <conio.h>
+#include <stdio.h>
+#include <fstream>
+
+using namespace std;
+
 
 void menu(void){
 
-    printf("1.enter data\n");
-    printf("2. display the content of the array\n");
-    printf("3. detemine the minimum value \n");
-    printf("4. detemine the maximum value \n");
-    printf("5. detemine the average value \n");
-    printf("0.Exit\n");
-    printf("Select an option:\n");
+    cout<<("\n1.enter data\n");
+    cout<<("2. display the content of the array\n");
+    cout<<("3. detemine the minimum value \n");
+    cout<<("4. detemine the maximum value \n");
+    cout<<("5. detemine the average value \n");
+    cout<<("0.Exit\n");
+    cout<<("Select an option:\n");
 }
 
 int main() {
     int array[SIZE] = {1, 2, 3, -4, 50, 6, 7, 8, 9, 10};
-    printf("Simple array...\n");
+    cout<<("Simple array...\n");
 
     int option = 0;
     int max = findMaximumValue(array);
@@ -22,7 +29,7 @@ int main() {
     float avg = findSumValue(array);
     do {
         menu();
-        scanf("%d", &option);
+        cin>>option;
         switch (option) {
             case 0:
                 break;
@@ -34,22 +41,22 @@ int main() {
                 break;
             case 3:
                 findMinimumValue(array);
-                printf("wynik = %d\n", min);
+                cout<<("wynik = %d\n", min);
                 break;
             case 4:
                 findMaximumValue(array);
-                printf("wynik = %d\n", max);
+                cout<<("wynik = %d\n", max);
                 break;
             case 5:
                 findSumValue(array);
-                printf("wynik = %f\n", avg);
+                cout<<("wynik = %f\n", avg);
                 break;
             default:
-                printf("Chose correct number...\n\n");
+                cout<<("Chose correct number...\n\n");
         }
     } while (option != 0);
     {
-        printf("koniec : )\n");
+        cout<<("koniec : )\n");
     }
     return 0;
 }
