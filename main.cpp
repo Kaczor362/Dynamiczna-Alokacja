@@ -1,6 +1,7 @@
 #include <iostream>
 #include "array.h"
 
+FILE *fptr;
 void menu(void){
 
     printf("1.enter data\n");
@@ -8,18 +9,17 @@ void menu(void){
     printf("3. detemine the minimum value \n");
     printf("4. detemine the maximum value \n");
     printf("5. detemine the average value \n");
+    printf("6- save data into Array \n");
+    printf("7- print data from Array \n");
     printf("0.Exit\n");
     printf("Select an option:\n");
 }
 
 int main() {
-    int array[SIZE] = {1, 2, 3, -4, 50, 6, 7, 8, 9, 10};
+    int array[SIZE];
     printf("Simple array...\n");
-
+    fptr=fopen("array.txt", "w");
     int option = 0;
-    int max = findMaximumValue(array);
-    int min = findMinimumValue(array);
-    float avg = findSumValue(array);
     do {
         menu();
         scanf("%d", &option);
@@ -34,15 +34,21 @@ int main() {
                 break;
             case 3:
                 findMinimumValue(array);
-                printf("wynik = %d\n", min);
                 break;
             case 4:
                 findMaximumValue(array);
-                printf("wynik = %d\n", max);
                 break;
             case 5:
                 findSumValue(array);
-                printf("wynik = %f\n", avg);
+                break;
+            case 6:
+                saveData(array);
+                if(fptr!=0) {
+                    printf("Array saved to the file \n \n");
+                }
+                break;
+            case 7:
+                restoreDataFromFile(array);
                 break;
             default:
                 printf("Chose correct number...\n\n");

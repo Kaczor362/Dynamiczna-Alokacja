@@ -1,6 +1,4 @@
-//
-// Created by student on 19.04.2024.
-//
+
 #include <iostream>
 #include "array.h"
 
@@ -17,6 +15,7 @@ int findMaximumValue(int array[]){
             max = array[i];
         }
     }
+    printf("wynik = %d\n", max);
     return max;
 }
 int findMinimumValue(int array[]){
@@ -26,6 +25,7 @@ int findMinimumValue(int array[]){
             min = array[i];
         }
     }
+    printf("wynik = %d\n", min);
     return min;
 }
 int findSumValue(int array[])
@@ -35,8 +35,9 @@ int findSumValue(int array[])
     for (int i = 0; i < SIZE; ++i) {
         sum += array[i];
     }
-    float ave = (float) sum / SIZE;
-    return ave;
+    float avg = (float) sum / SIZE;
+    printf("wynik = %f\n", avg);
+    return avg;
 }
 void wpisywanie(int array[])
 {
@@ -46,3 +47,29 @@ void wpisywanie(int array[])
     }
 }
 
+void saveData(int array[]) {
+    fptr = fopen("array.txt", "w");
+    if (fptr != 0) {
+        for (int i = 0; i < 10; i++) {
+            fprintf(fptr, "%d\n", array[i]);
+        }
+        fclose(fptr);
+        printf("Data saved to file successfully.\n");
+    } else {
+        printf("Error opening file!\n");
+    }
+}
+
+void restoreDataFromFile (int array[]) {
+    fptr = fopen("array.txt", "r");
+    if (fptr != NULL) {
+        char fileLine[50];
+        while (fgets(fileLine, sizeof(fileLine), fptr) != 0) {
+            printf("%s", fileLine);
+        }
+        fclose(fptr);
+        printf("Data restored from file successfully.\n");
+    } else {
+        printf("Error opening file!\n");
+    }
+}
